@@ -1,0 +1,53 @@
+<?php
+// module/Album/view/album/album/add.phtml:
+
+$title = 'Neuer Kunde';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url('home/default', array('controller' => 'debitor','action' => 'new')));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id'));
+?>
+
+<p>
+<?php echo $this->formRow($form->get('business')); ?>
+</p>
+<fieldset>
+    <legend>Rechnungsadresse</legend>
+
+    <p>
+    <?php echo $this->formRow($form->get('name')); ?>
+    </p>
+    <p>
+    <?php 
+    echo $this->formRow($form->get('prename'));
+    echo $this->formRow($form->get('surname'));
+    ?>
+    </p>
+    <p>
+    <?php echo $this->formRow($form->get('street')); ?>
+    <?php echo $this->formRow($form->get('housenumber')); ?>
+    </p>
+    <p>
+    <?php echo $this->formRow($form->get('zipcode')); ?>
+    <?php echo $this->formRow($form->get('city')); ?>
+    </p>
+</fieldset>
+<fieldset>
+    <legend>Kundeninfo</legend>
+    <?php echo $this->formRow($form->get('default_rate')); ?>
+</fieldset>
+<p>
+<?php 
+echo $this->formSubmit($form->get('submit')); 
+echo $this->formRow($form->get('csrf')); 
+?>
+<a href="<?php echo $this->url('home/default', array('controller' => 'debitor'));?>">Abbrechen</a>
+</p>
+<?php
+echo $this->form()->closeTag();

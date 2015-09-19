@@ -1,0 +1,17 @@
+{
+    "name": "zendframework/skeleton-application",
+    "description": "sixhop.net - Moosgummi",
+    "license": "BSD-3-Clause",
+    "keywords": [
+        "framework",
+        "zf2"
+    ],
+    "homepage": "http://framework.zend.com/",
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.*",
+        "doctrine/doctrine-orm-module": "0.*",
+        "neilime/zf2-twb-bundle": "2.*@stable",
+        "eddiejaoude/zf2-logger" : "0.*"
+    }
+}
